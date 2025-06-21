@@ -287,15 +287,6 @@ prediction, confidence = network.predict_with_confidence(X[0])  # With confidenc
 print(f"Prediction: {prediction}, Confidence: {confidence:.3f}")
 ```
 
-### Features
-
-- **NumPy Integration**: Work seamlessly with NumPy arrays
-- **High Performance**: Direct C++ implementation
-- **Model Persistence**: Save and load trained models
-- **Batch Operations**: Efficient batch prediction
-- **Confidence Scores**: Get prediction confidence
-- **Scikit-learn Compatible**: Easy integration with ML workflows
-
 ### Example Usage
 
 ```python
