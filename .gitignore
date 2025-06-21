@@ -1,0 +1,118 @@
+# Build directories
+build/
+build-*/
+out/
+cmake-build-*/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+lvq_train
+lvq_test
+lvq_demo
+lvq_iris_demo
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Model files (can be large)
+models/*.bin
+models/*.model
+models/*.weights
+
+# Dataset files (can be large)
+data/mnist/*.ubyte
+data/mnist/*.gz
+data/iris.csv
+
+# Results and output files
+results/
+output/
+*.csv
+*.txt
+!CMakeLists.txt
+!README.md
+!CHANGELOG.md
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
+
+# Documentation build
+docs/_build/
+docs/build/
+
+# Test coverage
+*.gcov
+*.gcda
+*.gcno
+coverage/
+
+# Profiling data
+*.prof
+*.gprof
+
+# Memory check files
+*.memcheck
+*.massif
+
+# Backup files
+*~
+*.orig
+*.rej 
