@@ -238,6 +238,94 @@ auto results = tester.test(test_data);
 auto prediction = network->predict(features);
 ```
 
+## Python Bindings
+
+The project includes Python bindings that provide a high-level interface to the LVQ network with full NumPy integration.
+
+### Installation
+
+```bash
+# Install Python dependencies
+pip3 install -r requirements.txt
+
+# Build Python module
+./build_python.sh
+
+# Activate the virtual environment and set up Python path
+source activate_venv.sh
+```
+
+### Quick Start
+
+```python
+import numpy as np
+import lvq_python as lvq
+
+# Create sample data
+X = np.random.randn(100, 4)  # 100 samples, 4 features
+y = np.random.randint(0, 3, 100)  # 3 classes
+
+# Convert to LVQ format
+data_points = lvq.array_to_data_points(X, y)
+
+# Configure and create network
+config = lvq.LVQConfig()
+config.num_codebook_vectors = 3
+config.learning_rate = 0.1
+config.max_iterations = 100
+
+network = lvq.LVQNetwork(config)
+
+# Train the network
+network.train(data_points)
+
+# Make predictions
+predictions = network.predict(X[0])  # Single prediction
+batch_predictions = network.predict_batch(X)  # Batch prediction
+prediction, confidence = network.predict_with_confidence(X[0])  # With confidence
+
+print(f"Prediction: {prediction}, Confidence: {confidence:.3f}")
+```
+
+### Features
+
+- **NumPy Integration**: Work seamlessly with NumPy arrays
+- **High Performance**: Direct C++ implementation
+- **Model Persistence**: Save and load trained models
+- **Batch Operations**: Efficient batch prediction
+- **Confidence Scores**: Get prediction confidence
+- **Scikit-learn Compatible**: Easy integration with ML workflows
+
+### Example Usage
+
+```python
+# Basic classification
+import numpy as np
+import lvq_python as lvq
+
+# Generate synthetic data
+np.random.seed(42)
+X = np.random.randn(300, 4)
+y = np.random.randint(0, 3, 300)
+
+# Train network
+data_points = lvq.array_to_data_points(X, y)
+network = lvq.LVQNetwork()
+network.train(data_points)
+
+# Evaluate
+predictions = network.predict_batch([dp.features for dp in data_points])
+accuracy = np.mean(np.array(predictions) == y)
+print(f"Accuracy: {accuracy:.3f}")
+
+# Save and load model
+network.save_model("my_model.bin")
+new_network = lvq.LVQNetwork()
+new_network.load_model("my_model.bin")
+```
+
+For detailed documentation, see [python_bindings/README.md](python_bindings/README.md).
+
 ## Performance Results
 
 ### Iris Dataset Results
