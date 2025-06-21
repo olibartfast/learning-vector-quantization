@@ -2,15 +2,6 @@
 
 This directory contains Python bindings for the Learning Vector Quantization (LVQ) Network C++ library, allowing you to use the LVQ network directly from Python with full NumPy integration.
 
-## Features
-
-- **Full NumPy Integration**: Work seamlessly with NumPy arrays
-- **High Performance**: Direct C++ implementation with Python bindings
-- **Easy to Use**: Pythonic interface with familiar ML patterns
-- **Model Persistence**: Save and load trained models
-- **Batch Operations**: Efficient batch prediction and training
-- **Confidence Scores**: Get prediction confidence along with class predictions
-
 ## Installation
 
 ### Prerequisites
